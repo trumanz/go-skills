@@ -1,2 +1,7 @@
-#!/usr/bin/env bash
-go run .
+#!/bin/bash
+
+set -xeuo  pipefail
+
+go run ./
+
+
