@@ -7,13 +7,13 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: ubuntu-20.04
 
 steps:
-- script: python -m unittest
-  displayName: 'Run a one-line script'
-
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+     python --version
+     go version 
+  displayName: 'Check & Prepare Environment'
+- script: python -m unittest
+  displayName: 'Run All test'
+
