@@ -1,7 +1,7 @@
 import os
 import unittest
 import subprocess
-
+import sys
 
 class Test(unittest.TestCase):
     def test_all_run_sh(self):
@@ -15,6 +15,7 @@ class Test(unittest.TestCase):
                     sh_file = root + "/" + file
                     i = i + 1
                     print("{}. Start Run {}".format(i,sh_file))
+                    sys.stdout.flush()
                     cp = subprocess.run(["bash", sh_file], cwd = root)
                     self.assertEqual(cp.returncode , 0)
         #cp = subprocess.run(["bash","run.sh"])
